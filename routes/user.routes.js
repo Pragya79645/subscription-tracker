@@ -1,6 +1,7 @@
 import { Router } from "express";
-import { getUsers, getUser } from "../controllers/user.controller";
+import { getUsers, getUser } from "../controllers/user.controller.js";
 import { get } from "http";
+import authorize from "../middlewares/auth.middleware.js";
 
  const userRouter = Router();
   
@@ -9,7 +10,7 @@ import { get } from "http";
 
 
 
- userRouter.get('/:id', getUser);
+ userRouter.get('/:id',authorize, getUser);
    // Handle fetching user details
 
 
