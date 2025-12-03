@@ -4,6 +4,7 @@ import { hostname } from 'os';
 import userRouter from './routes/user.routes.js';
 import authRouter from './routes/auth.routes.js';
 import subsriptionRouter from './routes/subscription.routes.js';
+import workflowRouter from './routes/workflow.routes.js';
 import connectToDatabase from './database/mongodb.js';
 import errorMiddleware from './middlewares/error.midddleware.js';
 import cookieParser from 'cookie-parser';
