@@ -77,7 +77,7 @@ const subscriptionSchema = new mongoose.Schema(
 }
 );
 
-subscriptionSchema.pre('save', function(next) {
+subscriptionSchema.pre('save', function() {
     if(!this.renewalDate ) {
 
         const renewalPeriods = {
@@ -94,7 +94,6 @@ subscriptionSchema.pre('save', function(next) {
     if(this.renewalDate < new Date()   ) {
         this.status = 'canceled';
     }
-    next();
 })
 
 const Subscription = mongoose.model("Subscription", subscriptionSchema);
