@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "build": "echo \"skip build (no build step)\""
+    "build": "npm ci --omit=dev"
   },
   "dependencies": {
     "@arcjet/node": "^1.0.0-beta.15",
